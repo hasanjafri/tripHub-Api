@@ -1,0 +1,11 @@
+{% if latest_video_game_poi_list %}
+    <ul>
+    {% for video_game_poi in latest_video_game_poi_list %}
+        <li>
+            <a href="{% url 'videoGames:details' video_game_poi.id %}">{{ video_game_poi.name }}</a>
+        </li>
+    {% endFor %}
+    </ul>
+{% else %}
+    <p>No VideoGamePOI are available.</p>
+{% endif %}

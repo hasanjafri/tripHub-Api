@@ -1,0 +1,6 @@
+<h1>{{ video_game_poi.name }}</h1>
+<ul>
+{% for rating in question.rating_set.all %}
+    <li>{{ rating.value }} - {{ rating.comment }}</li>
+{% endfor %}
+</ul>
