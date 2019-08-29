@@ -1,6 +1,9 @@
 <h1>{{ video_game_poi.name }}</h1>
-<ul>
-{% for rating in question.rating_set.all %}
-    <li>{{ rating.value }} - {{ rating.comment }}</li>
-{% endfor %}
-</ul>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'videoGames:rate' video_game_poi.id %}" method="post">
+	{% csrf_token %}
+	{% for rating in video_game_poi.rating_set.all %}
+		<input type="radio"
+</form>
